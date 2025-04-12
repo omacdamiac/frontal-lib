@@ -9,6 +9,43 @@
     <script nomodule src="/build/frontalui.js"></script>
   </head>
   <body>
-    <my-component first="Stencil" middle="'Don't call me a framework'" last="JS"></my-component>
+    <!-- <my-component first="Stencil" middle="'Don't call me a framework'" last="JS"></my-component> -->
+    <div style="background: #f0f0f0; padding: 10px">
+      <frontal-button text="PRIMARY"></frontal-button>
+      <frontal-button text="SECUNDARY" color="secundary"></frontal-button>
+      <frontal-button text="SUCCESS" color="success"></frontal-button>
+      <frontal-button text="WARNING" color="warning"></frontal-button>
+      <frontal-button text="FAILED" color="failed"></frontal-button>
+      <frontal-button text="INFO" color="info"></frontal-button>
+      <frontal-button text="NEUTRO" color="light"></frontal-button>
+      <frontal-button text="BLACK" color="dark"></frontal-button>
+      <frontal-button text="FILLED" class="filled"></frontal-button>
+      <frontal-button disabled="true" text="DISABLED"></frontal-button>
+    </div>
+
+    <!-- DARK -->
+    <div style="background: black; padding: 10px">
+      <frontal-button text="PRIMARY"></frontal-button>
+      <frontal-button text="SECUNDARY" color="secundary"></frontal-button>
+      <frontal-button text="SUCCESS" color="success"></frontal-button>
+      <frontal-button text="WARNING" color="warning"></frontal-button>
+      <frontal-button text="FAILED" color="failed"></frontal-button>
+      <frontal-button text="INFO" color="info"></frontal-button>
+      <frontal-button text="NEUTRO" color="light"></frontal-button>
+      <frontal-button text="BLACK" color="dark"></frontal-button>
+      <frontal-button text="FILLED" class="filled"></frontal-button>
+      <frontal-button disabled="true" text="DISABLED"></frontal-button>
+    </div>
+
+    <!-- input -->
+    <div style="background: #f0f0f0; padding: 10px">
+      <frontal-input label="Nombre" name="nombre"></frontal-input>
+
+      <frontal-input label="Nombre disabled" value="Roca" name="nombre" disabled="true"></frontal-input>
+    </div>
+    <div style="background: black; padding: 10px">
+      <frontal-input color="dark" label="Apellido" name="apellido"></frontal-input>
+      <frontal-input color="dark" label="Apellido disabled" name="apellido" disabled="true"></frontal-input>
+    </div>
   </body>
 </html>

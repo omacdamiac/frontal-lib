@@ -1,7 +1,16 @@
 import { Config } from '@stencil/core';
+import { sass } from '@stencil/sass';
 
 export const config: Config = {
   namespace: 'frontalui',
+  plugins: [
+    sass({
+      injectGlobalPaths: [
+        'src/global/_variable.scss',
+        'src/global/global.scss'
+      ]
+    })
+  ],
   outputTargets: [
     {
       type: 'dist',

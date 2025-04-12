@@ -1,0 +1,87 @@
+// :host {
+//   --color-primary: 0, 57, 166;
+//   --color-secundary: 51, 102, 153;
+//   --color-success: 5, 190, 80;
+//   --color-warning: 253, 173, 0;
+//   --color-failed: 220, 53, 69;
+//   --color-info: 29, 184, 255;
+//   --color-neutro: 255, 255, 255;
+//   --color-dark: 51, 51, 51;
+// }
+// @use '../../global/global.scss';
+@mixin fr-button {
+  color: white;
+  padding: 8px 15px;
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+  &:hover {
+    // background: black;
+    background-color: rgba(var(--color-primary), 0.8);
+  }
+}
+
+.frontal-button {
+  @include fr-button;
+  background: rgb(var(--color-primary));
+
+  &[disabled] {
+    // border: 1px solid #999999;
+    background-color: rgb(var(--color-disabled-bg));
+    color: rgb(var(--color-disabled));
+    pointer-events: none;
+    text-shadow: -1px -1px 0px #ddd
+    ;
+  }
+  &[data-color='secundary'] {
+    background: rgb(var(--color-secundary));
+    &:hover {
+      background-color: rgba(var(--color-secundary), 0.8);
+    }
+  }
+  &[data-color='success'] {
+    background: rgb(var(--color-success));
+    &:hover {
+      background: rgba(var(--color-success), 0.8);
+    }
+  }
+  &[data-color='warning'] {
+    background: rgb(var(--color-warning));
+    &:hover {
+      background: rgba(var(--color-warning), 0.8);
+    }
+  }
+  &[data-color='failed'] {
+    background: rgb(var(--color-failed));
+    &:hover {
+      background: rgba(var(--color-failed), 0.8);
+    }
+  }
+  &[data-color='info'] {
+    background: rgb(var(--color-info));
+    &:hover {
+      background: rgba(var(--color-info), 0.8);
+    }
+  }
+  &[data-color='light'] {
+    background: rgb(var(--color-neutro));
+    color: var(--color-primary);
+    &:hover {
+      background: rgba(var(--color-neutro), 0.8);
+    }
+  }
+  &[data-color='dark'] {
+    background: rgb(var(--color-dark));
+    &:hover {
+      background: rgba(var(--color-dark), 0.8);
+    }
+  }
+  &.filled {
+    background: rgb(var(--color-neutro));
+    border: 1px solid rgb(var(--color-primary));
+    color: rgb(var(--color-primary));
+    &:hover {
+      background: rgba(var(--color-neutro), 0.9);
+    }
+  }
+}

@@ -6,6 +6,20 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface FrontalButton {
+        "class": string;
+        "color": string;
+        "disabled": boolean;
+        "text": string;
+    }
+    interface FrontalInput {
+        "color": string;
+        "disabled": boolean;
+        "label": string;
+        "name": string;
+        "validator": Array<string>;
+        "value": string;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -22,6 +36,18 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLFrontalButtonElement extends Components.FrontalButton, HTMLStencilElement {
+    }
+    var HTMLFrontalButtonElement: {
+        prototype: HTMLFrontalButtonElement;
+        new (): HTMLFrontalButtonElement;
+    };
+    interface HTMLFrontalInputElement extends Components.FrontalInput, HTMLStencilElement {
+    }
+    var HTMLFrontalInputElement: {
+        prototype: HTMLFrontalInputElement;
+        new (): HTMLFrontalInputElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
@@ -29,10 +55,26 @@ declare global {
         new (): HTMLMyComponentElement;
     };
     interface HTMLElementTagNameMap {
+        "frontal-button": HTMLFrontalButtonElement;
+        "frontal-input": HTMLFrontalInputElement;
         "my-component": HTMLMyComponentElement;
     }
 }
 declare namespace LocalJSX {
+    interface FrontalButton {
+        "class"?: string;
+        "color"?: string;
+        "disabled"?: boolean;
+        "text"?: string;
+    }
+    interface FrontalInput {
+        "color"?: string;
+        "disabled"?: boolean;
+        "label"?: string;
+        "name"?: string;
+        "validator"?: Array<string>;
+        "value"?: string;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -48,6 +90,8 @@ declare namespace LocalJSX {
         "middle"?: string;
     }
     interface IntrinsicElements {
+        "frontal-button": FrontalButton;
+        "frontal-input": FrontalInput;
         "my-component": MyComponent;
     }
 }
@@ -55,6 +99,8 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "frontal-button": LocalJSX.FrontalButton & JSXBase.HTMLAttributes<HTMLFrontalButtonElement>;
+            "frontal-input": LocalJSX.FrontalInput & JSXBase.HTMLAttributes<HTMLFrontalInputElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }

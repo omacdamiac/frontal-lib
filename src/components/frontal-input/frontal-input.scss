@@ -1,0 +1,51 @@
+// @use '../../global/global.scss';
+:host {
+  display: block;
+}
+fieldset {
+  border: none;
+  background: transparent;
+  width: min-content;
+  &[disabled]>input{
+    border: 1px solid  rgb(var(--color-disabled));
+    background-color: rgb(var(--color-disabled-bg));
+    color: rgb(var(--color-disabled));
+    pointer-events: none;
+  }
+  &[disabled]>label{
+    color: rgb(var(--color-disabled));
+    pointer-events: none;
+  }
+}
+
+label {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  display: block;
+  margin-bottom: 5px;
+  &[data-color='dark'] {
+    color: #f0f0f0;
+  }
+}
+
+input {
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+  border-radius: 5px;
+  padding: 7px 10px;
+  border: 1px solid #666;
+  // &[disabled] {
+  //   border: 1px solid #999999;
+  //   background-color: rgb(var(--color-disabled-bg));
+  //   color: rgb(var(--color-disabled));
+  //   pointer-events: none;
+  // }
+  &:focus-visible {
+    outline: 1px solid rgb(var(--color-primary));
+  }
+  &[data-color='dark'] {
+    &:focus-visible {
+      outline: 1px solid rgb(var(--color-neutro));
+    }
+  }
+}
